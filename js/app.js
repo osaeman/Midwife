@@ -47,3 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.overflow = "";
   });
 });
+
+var anmeldungLinks = document.querySelectorAll(".dateBtn");
+
+anmeldungLinks.forEach(function (anmeldungLink) {
+  anmeldungLink.addEventListener("click", function (event) {
+    // event.preventDefault();
+    var dateText = anmeldungLink.parentElement
+      .querySelector("strong")
+      .textContent.slice(0, -1);
+    localStorage.setItem("selectedDate", dateText);
+  });
+});

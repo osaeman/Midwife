@@ -88,9 +88,9 @@
         <h1>Kursanmeldung</h1>
         <span>Ich melde mich verbindlich zu folgendem Kurs an: </span>
         <br /><br />
-        <b>Rückbildungskurs, 02.11.23 - 07.12.23 (6 Termine) </b>
+        <b id="selectedDate"></b>
         <div class="course-form">
-          <form>
+          <form method="post" action="https://formspree.io/f/xpzgyjjb">
             <p>Name <span>(erforderlich)</span></p>
             <div class="input-fields-set">
               <div>
@@ -787,7 +787,7 @@
               <div class="number">
                 <label for="Nummer">Nummer </label>
                 <input type="tel" required id="Nummer" name="Nummer" />
-                <div class="dial-code">Code</div>
+                <div class="dial-code"></div>
               </div>
             </div>
             <div class="mail">
@@ -889,6 +889,28 @@
           // Display "ok" after three seconds
           send_course_btn.textContent = "Senden";
         }, 3000); // 3000 milliseconds (3 seconds)
+      });
+
+      // Display selected date
+      const dateElement = document.getElementById("selectedDate");
+      dateElement.innerText = `Rückbildungskurs, ${localStorage.getItem(
+        "selectedDate"
+      )} (6 Termine) `;
+
+      // Get references to the select element and the div with class "dial-code"
+      var countrySelect = document.getElementById("Land_1");
+      var dialCodeDiv = document.querySelector(".dial-code");
+
+      // Add a change event listener to the select element
+      countrySelect.addEventListener("change", function () {
+        // Get the selected option
+        var selectedOption = countrySelect.options[countrySelect.selectedIndex];
+
+        // Get the data-dialcode attribute from the selected option
+        var dialCode = selectedOption.getAttribute("data-dialcode");
+
+        // Update the content of the dial-code div with the selected dial code
+        dialCodeDiv.textContent = dialCode;
       });
     </script>
   </body>
