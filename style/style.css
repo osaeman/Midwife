@@ -1,0 +1,996 @@
+/* For Headings */
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap");
+/* For Main Layout */
+@import url("https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300;400;500;600;700&display=swap");
+/* -----CSS Default Reset----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+:root {
+  --primay-color: #655a3f;
+  --seconday-color: #fbe19f;
+  --grey-shade-light: #fbfbfb;
+  --third-color: #fff5d9;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  /* font-family: 'Gilda Display', serif; */
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+/*--------------- Home Page Styling------------ */
+/* <!------- Header----- --> */
+header {
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  transition: all 0.4s ease-in;
+}
+
+.header-flexbox {
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 0;
+}
+.header-logo img {
+  width: 300px;
+  max-width: 100%;
+  max-height: 87px;
+}
+.header-button button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.header-button button a {
+  background-color: var(--seconday-color);
+  color: var(--primay-color);
+  font-size: 1.5rem;
+  padding: 20px 33px;
+  letter-spacing: 1px;
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
+.header-button button a:hover {
+  opacity: 0.8;
+  transition: all 0.2s ease-in;
+}
+/* -----------Mobile Version Header--------- */
+
+.hamburger .line {
+  width: 40px;
+  height: 2px;
+  background-color: white;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(45deg);
+  -ms-transform: translateY(10px) rotate(45deg);
+  -o-transform: translateY(10px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  -o-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-display {
+  position: fixed;
+  background-color: var(--grey-shade-light);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  opacity: 1;
+  display: none;
+  animation: opacityAnimation 0.6s ease-in-out;
+}
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.hamburger-display-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.header-mob-button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 100px;
+  animation: myAnimation 0.3s ease-in-out;
+}
+@keyframes myAnimation {
+  0% {
+    transform: translate(-50%, 500%);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+.header-mob-button button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.header-mob-button button a {
+  background-color: var(--seconday-color);
+  color: var(--primay-color);
+  font-size: 1.9rem;
+  padding: 22px 40px;
+  letter-spacing: 1px;
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
+
+.hamburger-display-container .hamburger-close-btn {
+  padding: 24px 0;
+  width: 86%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 5.4rem;
+  color: black;
+}
+.hamburger-display-container .hamburger-close-btn i {
+  cursor: pointer;
+}
+.hamburger-menu-clr .line {
+  background-color: black !important;
+}
+/* <!-- Hero Section --> */
+.hero-section {
+  position: relative;
+  height: 140vh;
+  width: 100vw;
+}
+.hero-img {
+  height: 140vh;
+  width: 100%;
+  position: relative;
+}
+.hero-img::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(19, 18, 14, 0.1);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.hero-img img {
+  object-fit: cover;
+  object-position: 50% 30%;
+  width: 100%;
+  height: 100%;
+}
+.hero-section-content {
+  position: absolute;
+  color: white;
+  top: 65%;
+  transform: translateY(-65%);
+  left: 3%;
+  width: 60%;
+}
+.hero-section-content h1 {
+  font-size: 7rem;
+  line-height: 8.9rem;
+  margin-bottom: 32px;
+  font-family: "Gilda Display", serif;
+}
+
+.hero-section-content span {
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+/* <!-- MidWife Approach Section --> */
+.midwife-section {
+  background-color: white;
+}
+.midwife-section-container {
+  width: 1000px;
+  max-width: 90%;
+  margin: 0 auto;
+  color: var(--primay-color);
+  text-align: center;
+  padding: 100px 0 180px 0;
+}
+.midwife-section h2 {
+  font-size: 5.7rem;
+  margin-bottom: 32px;
+  font-family: "Gilda Display", serif;
+}
+.midwife-section p {
+  font-size: 1.6rem;
+  margin-top: 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+}
+/* <!-- About Me Section --> */
+.about-section {
+  width: 100%;
+  background-color: var(--third-color);
+  padding: 120px 20px 280px 20px;
+}
+.about-section-flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 96%;
+  margin: 0 auto;
+}
+.about-section-flexbox-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 43%;
+}
+
+.about-section-flexbox-left img {
+  object-fit: contain;
+  object-position: center;
+  width: 300px;
+  height: 340px;
+  border-radius: 90% 90% 0 0 / 16em;
+}
+
+.about-section-flexbox-right {
+  color: var(--primay-color);
+  width: 57%;
+  padding: 0 0 0 130px;
+}
+
+.about-section-flexbox-right h2 {
+  font-size: 5.7rem;
+  margin-bottom: 32px;
+  font-family: "Gilda Display", serif;
+}
+
+.about-section-flexbox-right p {
+  font-size: 1.6rem;
+  margin-top: 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+}
+
+/* <!-- Services Section --> */
+.services-section {
+  background-color: white;
+}
+.services-section-container {
+  width: 90%;
+  margin: 0 auto;
+  color: var(--primay-color);
+  padding: 90px 30px;
+}
+.services-section h2 {
+  font-size: 5.3rem;
+  margin-bottom: 32px;
+  font-family: "Gilda Display", serif;
+  text-align: center;
+}
+.services-section span {
+  font-size: 1.6rem;
+  margin-top: 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.services-section-flexbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 80px;
+  grid-column-gap: 60px;
+}
+
+.services-section-flexbox-left ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin-left: 20px;
+}
+.services-section-flexbox-left ul li {
+  font-size: 1.6rem;
+  margin: 10px 0;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+  text-indent: -21px;
+  margin-left: 21px;
+}
+
+.services-section-flexbox-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.services-section-flexbox-right img {
+  width: 78%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  object-position: center;
+}
+/* ------Rehabilitation Course----- */
+.rehab-background {
+  background-image: url("../assets/rehab-background.jpg");
+  z-index: -1;
+  background-color: var(--primay-color);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* <!-- Rehabilitation section --> */
+.rehab-section {
+  width: 100%;
+  padding: 110px 0;
+  background: transparent;
+}
+.rehab-card-container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 54px;
+}
+.rehab-card-flexbox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+}
+.rehab-card-flexbox-left {
+  grid-column: 1 / span 2;
+  padding-right: 45px;
+}
+.rehab-card-flexbox-left-top {
+  border-bottom: 1px solid #7f7e7e40;
+}
+.rehab-card-flexbox-left-top h2 {
+  font-size: 3.7rem;
+  margin: 0 0 24px;
+  font-family: "Gilda Display", serif;
+}
+
+.rehab-card-flexbox-left-top p {
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+}
+
+.rehab-card-flexbox-left-bottom {
+  margin-top: 16px;
+}
+.rehab-card-flexbox-left-bottom span {
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+.rehab-card-flexbox-left-bottom ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+.rehab-card-flexbox-left-bottom ul li {
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+  text-indent: -22px;
+  margin-left: 23px;
+}
+
+.rehab-card-flexbox-left-bottom ul li a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.rehab-card-flexbox-right {
+  grid-column: 3;
+}
+
+.rehab-card-flexbox-right-top {
+  margin-bottom: 12px;
+}
+.rehab-card-flexbox-right-top h2 {
+  font-size: 3.7rem;
+  margin: 0 0 24px;
+  font-family: "Gilda Display", serif;
+}
+.rehab-card-flexbox-right-top span {
+  font-size: 1.8rem;
+  margin: 0 0 6px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.rehab-card-flexbox-right-bottom {
+  border-top: 1px solid #7f7e7e40;
+  padding-top: 16px;
+}
+
+.rehab-card-flexbox-right-bottom h2 {
+  font-size: 3.7rem;
+  margin: 0 0 24px;
+  font-family: "Gilda Display", serif;
+}
+.rehab-card-flexbox-right-bottom p {
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+}
+
+/*------- Contact Form Section---- */
+
+.contact-section {
+  background-color: white;
+}
+.contact-section-container {
+  width: 94%;
+  margin: 0 auto;
+  color: var(--primay-color);
+  padding: 80px 0;
+}
+.contact-section h2 {
+  font-size: 5.2rem;
+  margin-bottom: 40px;
+  font-family: "Gilda Display", serif;
+  text-align: left;
+}
+.contact-section p {
+  font-size: 1.6rem;
+  margin-top: 20px;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-section-flexbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 80px;
+  padding-top: 80px;
+}
+
+.contact-section-flexbox-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-section-flexbox-right form p {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.contact-section-flexbox-right form p span {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.contact-section-flexbox-right form div input {
+  width: 100%;
+  background-color: var(--grey-shade-light);
+  padding: 12px 10px;
+  font-weight: 400;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border: 1px solid #a9a9a9;
+  margin-bottom: 24px;
+}
+.contact-section-flexbox-right form div input:focus {
+  border: 2px solid var(--primay-color);
+}
+
+.contact-section-flexbox-right form div textarea {
+  width: 100%;
+  background-color: var(--grey-shade-light);
+  padding: 12px 10px;
+  font-weight: 400;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border: 1px solid #a9a9a9;
+  margin-bottom: 24px;
+}
+.contact-section-flexbox-right form div textarea:focus {
+  border: 2px solid var(--primay-color);
+}
+.contact-section-flexbox-right form div label {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 5px;
+}
+.contact-section-flexbox-right form div label span {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  display: inline-block;
+  margin-left: 4px;
+}
+.name-field-set {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.name-field-set div {
+  width: 49%;
+}
+
+.contact-section-flexbox-right form button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: block;
+  background-color: var(--seconday-color);
+  padding: 25px 35px;
+  display: block;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.contact-section-flexbox-right form button:hover {
+  opacity: 0.8;
+}
+.contact-section-flexbox-right h3 {
+  font-size: 4.4rem;
+  margin: 32px 0 32px;
+  font-family: "Gilda Display", serif;
+  text-align: left;
+}
+
+.contact-section-flexbox-right p {
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+}
+.contact-section-flexbox-right p:last-child {
+  margin: 23px 0 0;
+}
+.contact-section-flexbox-right p a {
+  border-bottom: 1px solid var(--primay-color);
+}
+
+/* ---------FAQ Accordian------- */
+
+.faq-section {
+  background-color: white;
+}
+.faq-section-container {
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
+  color: var(--primay-color);
+  padding: 100px 0;
+}
+.faq-section-container h2 {
+  font-size: 5.2rem;
+  margin-bottom: 32px;
+  font-family: "Gilda Display", serif;
+  text-align: center;
+}
+.accordion {
+  width: 100%;
+  margin: 0;
+  border-top: 1px solid var(--primay-color);
+  border-bottom: 1px solid var(--primay-color);
+  color: var(--primay-color);
+}
+.accordian-1 {
+  border-bottom: none !important;
+}
+.accordion-title {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordion-title h3 {
+  font-size: 2.3rem;
+  font-family: "Gilda Display", serif;
+  padding-right: 14px;
+}
+
+.accordion-toggle {
+  font-size: 2.3rem;
+  position: relative;
+  display: block;
+}
+.plus {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  transform: rotate(0deg);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.plus-appear {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transform: rotate(90deg);
+}
+.accordion-content {
+  display: none;
+  padding: 0 0 30px 0;
+}
+.accordion-content p {
+  font-size: 1.6rem;
+  line-height: 2.7rem;
+  letter-spacing: 0.5px;
+}
+
+.accordion-content ul {
+  list-style: disc;
+  list-style-position: inside;
+  padding: 15px 0 0 20px;
+}
+.accordion-content ul li {
+  font-size: 1.6rem;
+  margin: 8px 0;
+}
+/* -------Footer------- */
+footer {
+  background-color: var(--seconday-color);
+  width: 100%;
+}
+.footer-container {
+  padding: 70px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  width: 135px;
+  height: 100px;
+  margin-right: 50px;
+}
+.footer-container nav a {
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--primay-color);
+  color: var(--primay-color);
+}
+
+/* Imprint Page Styling */
+.imprint-section {
+  width: 92%;
+  margin: 180px auto 100px;
+  color: var(--primay-color);
+}
+.imprint-section h1 {
+  font-size: 5.5rem;
+  margin: 0 0 32px;
+  font-family: "Gilda Display", serif;
+}
+.imprint-section-part-1,
+.imprint-section-part-2,
+.imprint-section-part-3 {
+  margin-bottom: 25px;
+}
+.imprint-section-part-1 h4,
+.imprint-section-part-2 h4,
+.imprint-section-part-3 h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.imprint-section-part-1 span,
+.imprint-section-part-2 span {
+  display: block;
+  margin-bottom: 10px;
+}
+.imprint-section-part-2 span a {
+  border-bottom: 1px solid var(--primay-color);
+}
+
+.imprint-section-part-3 ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+.imprint-section-part-3 ul li a {
+  border-bottom: 1px solid var(--primay-color);
+  font-weight: 700;
+}
+.imprint-section-part-4 {
+  margin-top: 150px;
+  line-height: 28px;
+  font-size: 1.6rem;
+  padding-right: 40px;
+}
+.imprint-section-part-4 p a {
+  border-bottom: 1px solid var(--primay-color);
+}
+/* ----------Data Privacy Page Styling---------*/
+.data-privacy-section {
+  width: 92%;
+  margin: 180px auto 100px;
+  color: var(--primay-color);
+}
+.data-privacy-section h1 {
+  font-size: 5.5rem;
+  margin: 0 0 32px;
+  font-family: "Gilda Display", serif;
+}
+.data-privacy-section h2 {
+  font-size: 4rem;
+  margin: 35px 0 30px;
+  font-family: "Gilda Display", serif;
+}
+.data-privacy-section h3 {
+  font-size: 2.6rem;
+  margin: 17px 0 5px;
+  font-family: "Gilda Display", serif;
+}
+.data-privacy-section strong {
+  font-weight: 700;
+}
+.data-privacy-section p {
+  line-height: 28px;
+  font-size: 1.6rem;
+  padding-bottom: 12px;
+}
+.data-privacy-section p a {
+  border-bottom: 2px solid var(--primay-color);
+}
+.data-privacy-section ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+.data-privacy-section ul li {
+  padding-bottom: 8px;
+  line-height: 28px;
+  font-size: 1.6rem;
+  text-indent: -22px;
+  margin-left: 24px;
+}
+.data-privacy-section ul li a {
+  border-bottom: 2px solid var(--primay-color);
+}
+.responsible-person span {
+  margin-bottom: 10px;
+  display: block;
+  line-height: 28px;
+  font-size: 1.6rem;
+}
+.responsible-person span a {
+  border-bottom: 2px solid var(--primay-color);
+}
+/*--------Course Reg Form Page Styling--------- */
+.course-reg-form-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 150px auto 100px;
+  color: var(--primay-color);
+}
+.course-reg-form-container h1 {
+  font-size: 5.4rem;
+  margin: 0 0 32px;
+  font-family: "Gilda Display", serif;
+}
+
+.course-reg-form-container b {
+  font-weight: 900;
+}
+
+.course-form {
+  margin-top: 60px;
+}
+
+.course-form form p span {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  display: inline-block;
+  margin: 0 0 9px 6px;
+}
+.course-form form label {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 5px;
+}
+.course-form form input {
+  width: 100%;
+  background-color: var(--grey-shade-light);
+  padding: 12px 10px;
+  font-weight: 400;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border: 1px solid #a9a9a9;
+  margin-bottom: 24px;
+}
+.course-form form input:focus {
+  border: 2px solid var(--primay-color);
+}
+.course-form form label span {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  display: inline-block;
+  margin-left: 6px;
+}
+.input-fields-set {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-fields-set div {
+  width: 49%;
+}
+.input-fields-set div input {
+  width: 100%;
+}
+.dob input,
+.dob-child input {
+  width: 30% !important;
+}
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.checkbox input {
+  width: fit-content !important;
+  margin-right: 18px;
+  height: fit-content !important;
+  margin-top: 20px;
+}
+.insurance select,
+.country select {
+  width: 100%;
+  background-color: var(--grey-shade-light);
+  padding: 12px 10px;
+  font-weight: 400;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border: 1px solid #a9a9a9;
+  margin-bottom: 24px;
+}
+.land_1 select {
+  width: 98%;
+  background-color: var(--grey-shade-light);
+  padding: 12px 10px;
+  font-weight: 400;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border: 1px solid #a9a9a9;
+  margin-bottom: 24px;
+}
+.insurance select:focus,
+.country select:focus {
+  border: 2px solid var(--primay-color);
+}
+.land_1 select:focus {
+  border: 2px solid var(--primay-color);
+}
+.number {
+  position: relative;
+}
+.number input {
+  padding-left: 60px !important;
+}
+.dial-code {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px !important;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey-shade-light);
+  left: 4px;
+}
+.course-form .send-course-btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: block;
+  background-color: var(--seconday-color);
+  padding: 25px 35px;
+  display: block;
+  color: white;
+  font-size: 1.6rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.course-form .send-course-btn:hover {
+  opacity: 0.8;
+}
+
+.form-notice {
+  margin: 100px 0 0 0;
+  font-size: 1.5rem;
+  line-height: 27px;
+}

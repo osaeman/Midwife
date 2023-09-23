@@ -1,0 +1,294 @@
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 120vh;
+  }
+  .hero-img {
+    height: 120vh;
+  }
+  .hero-section-content h1 {
+    font-size: 6.2rem;
+    line-height: 7.2rem;
+  }
+
+  .hero-section-content span {
+    font-size: 2.2rem;
+  }
+  .midwife-section h2 {
+    font-size: 4.9rem;
+    line-height: 5.3rem;
+  }
+  .about-section {
+    padding: 80px 20px 80px 20px;
+  }
+  .about-section-flexbox-right {
+    padding: 0 0 0 80px;
+  }
+
+  .about-section-flexbox-right h2 {
+    font-size: 4.1rem;
+  }
+  .services-section h2 {
+    font-size: 4.4rem;
+    margin-bottom: 26px;
+  }
+
+  .services-section-flexbox {
+    margin-top: 20px;
+    grid-column-gap: 20px;
+  }
+  .services-section-flexbox-right img {
+    width: 90%;
+    aspect-ratio: 3/2;
+  }
+  .rehab-section {
+    padding: 0 0;
+  }
+  .rehab-card-flexbox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0;
+  }
+  .rehab-card-flexbox-left {
+    grid-column: 1 / span 3;
+  }
+  .rehab-card-flexbox-right {
+    grid-column: 1 / span 3;
+  }
+  .rehab-card-flexbox-right-top {
+    margin-bottom: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #7f7e7e40;
+  }
+  .contact-section h2 {
+    font-size: 4.8rem;
+    margin-bottom: 20px;
+  }
+  .contact-section-flexbox {
+    grid-column-gap: 60px;
+  }
+  .faq-section-container h2 {
+    font-size: 4.3rem;
+  }
+}
+@media (max-width: 786px) {
+  .header-flexbox {
+    width: 90%;
+  }
+  .hero-section {
+    height: 100vh;
+  }
+  .hero-img {
+    height: 100vh;
+  }
+  .hero-section-content {
+    top: 60%;
+    transform: translateY(-60%);
+    left: 5%;
+    width: 80%;
+  }
+  .hero-section-content h1 {
+    font-size: 4.8rem;
+    line-height: 6.2rem;
+  }
+
+  .hero-section-content span {
+    font-size: 2rem;
+  }
+  .midwife-section-container {
+    padding: 80px 0 140px 0;
+  }
+  .midwife-section h2 {
+    font-size: 3.9rem;
+    line-height: 4.9rem;
+  }
+  .about-section {
+    padding: 80px 0 80px 0;
+  }
+  .about-section-flexbox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .about-section-flexbox-right h2 {
+    font-size: 3.8rem;
+  }
+  .about-section-flexbox-left {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .about-section-flexbox-left img {
+    object-fit: cover;
+    object-position: center;
+    width: 75%;
+    aspect-ratio: 3/2;
+  }
+  .about-section-flexbox-right {
+    width: 100%;
+    padding: 60px 0 0 0;
+  }
+
+  .services-section h2 {
+    font-size: 3.9rem;
+  }
+  .services-section-container {
+    width: 90%;
+    padding: 90px 0;
+  }
+  .services-section-flexbox {
+    margin-top: 20px;
+    grid-column-gap: 0;
+    grid-row-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .services-section-flexbox-right img {
+    width: 100%;
+    aspect-ratio: 3/1.5;
+  }
+
+  .rehab-card-container {
+    padding: 34px;
+  }
+  .rehab-card-flexbox-left {
+    padding-right: 0;
+  }
+  .rehab-card-flexbox-left-top h2 {
+    font-size: 2.4rem;
+  }
+  .rehab-card-flexbox-right-top h2 {
+    font-size: 2.4rem;
+  }
+  .rehab-card-flexbox-right-bottom h2 {
+    font-size: 2.4rem;
+  }
+  .rehab-card-flexbox-left-top p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .rehab-card-flexbox-left-bottom ul li {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .rehab-card-flexbox-right-top span {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .rehab-card-flexbox-right-bottom p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .contact-section-container {
+    width: 90%;
+  }
+  .contact-section h2 {
+    font-size: 4.2rem;
+  }
+  .contact-section-flexbox {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 40px;
+  }
+  .contact-section-flexbox-right h3 {
+    font-size: 3.2rem;
+  }
+  .contact-section-flexbox-left img {
+    width: 100%;
+    aspect-ratio: 3/1.5;
+    object-fit: cover;
+    object-position: center;
+  }
+  .faq-section-container h2 {
+    font-size: 3.2rem;
+  }
+  .accordion-title h3 {
+    font-size: 2rem;
+  }
+  .header-button {
+    display: none;
+  }
+  .header-logo img {
+    width: 165px;
+    max-width: 100%;
+    max-height: 29px;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  /* Imprint Page Styling */
+  .imprint-section {
+    width: 90%;
+    margin: 130px auto 80px;
+  }
+  .imprint-section h1 {
+    font-size: 4rem;
+  }
+  .imprint-section-part-4 {
+    margin-top: 120px;
+    padding-right: 0;
+  }
+  .data-privacy-section {
+    width: 90%;
+    margin: 130px auto 80px;
+  }
+  .data-privacy-section h1 {
+    font-size: 4rem;
+  }
+  .data-privacy-section h2 {
+    font-size: 3rem;
+    margin: 30px 0 22px;
+  }
+  .data-privacy-section h3 {
+    font-size: 1.8rem;
+    margin: 14px 0 5px;
+  }
+  .footer-container {
+    padding: 50px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-logo img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .course-reg-form-container {
+    margin: 120px auto 80px;
+  }
+  .course-reg-form-container h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section-flexbox-left img {
+    object-fit: cover;
+    object-position: center;
+    width: 75%;
+    aspect-ratio: 3/3.4;
+  }
+  .data-privacy-section h1 {
+    font-size: 3.2rem;
+  }
+  .data-privacy-section h2 {
+    font-size: 2.5rem;
+  }
+  .input-fields-set {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .input-fields-set div {
+    width: 100%;
+  }
+  .dob input,
+  .dob-child input {
+    width: 50% !important;
+  }
+  .form-notice {
+    margin: 80px 0 0 0;
+    font-size: 1.5rem;
+    line-height: 27px;
+  }
+}
