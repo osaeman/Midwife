@@ -71,6 +71,10 @@
   }
 }
 @media (max-width: 786px) {
+  .header-mob-button button a {
+    font-size: 1.6rem;
+    padding: 16px 25px;
+  }
   .header-flexbox {
     width: 90%;
   }
@@ -290,5 +294,12 @@
     margin: 80px 0 0 0;
     font-size: 1.5rem;
     line-height: 27px;
+  }
+}
+
+@media (max-width: 310px) {
+  .header-mob-button button a {
+    font-size: 1.3rem;
+    padding: 10px 17px;
   }
 }

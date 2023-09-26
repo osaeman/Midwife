@@ -170,6 +170,7 @@ header {
   transform: translate(-50%, 0);
   bottom: 100px;
   animation: myAnimation 0.3s ease-in-out;
+  width: 100%;
 }
 @keyframes myAnimation {
   0% {
@@ -184,6 +185,8 @@ header {
   background-color: transparent;
   outline: none;
   border: none;
+  margin: 0 auto;
+  display: block;
 }
 .header-mob-button button a {
   background-color: var(--seconday-color);
@@ -857,13 +860,18 @@ footer {
 }
 
 .course-reg-form-container b {
+  display: block;
+  margin-bottom: 40px;
   font-weight: 900;
 }
 
 .course-form {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
+.course-form form p {
+  font-size: 1.8rem;
+}
 .course-form form p span {
   font-size: 1.4rem;
   opacity: 0.8;
@@ -871,7 +879,7 @@ footer {
   margin: 0 0 9px 6px;
 }
 .course-form form label {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   display: block;
   margin-bottom: 5px;
 }

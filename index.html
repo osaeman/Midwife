@@ -88,6 +88,7 @@
       <section class="hero-section">
         <div class="hero-img">
           <img
+            srcset="./assets/hero-img.webp"
             src="./assets/hero-img.jpg"
             alt="A pregnant lady standing in fields"
           />
@@ -117,6 +118,7 @@
         <div class="about-section-flexbox">
           <div class="about-section-flexbox-left">
             <img
+              srcset="./assets/sophia_tuerpe_hebamme.webp"
               src="./assets/sophia_tuerpe_hebamme.jpg"
               alt="Sophia Turpe Self Photo"
               loading="lazy"
@@ -167,15 +169,17 @@
               </ul>
             </div>
             <div class="services-section-flexbox-right">
-              <img src="./assets/Services.jpg" alt="Services image" />
+              <img
+                srcset="./assets/Services.webp"
+                src="./assets/Services.jpg"
+                alt="Services image"
+              />
             </div>
           </div>
         </div>
       </section>
       <!-- Rehabilitation section -->
-      <div class="rehab-background">
-        <!-- <img src="./assets/rehab-background.jpg" alt="" /> -->
-      </div>
+      <div class="rehab-background"></div>
       <section class="rehab-section">
         <div class="rehab-card-container">
           <div class="rehab-card-flexbox">
@@ -253,22 +257,23 @@
           <div class="contact-section-flexbox">
             <div class="contact-section-flexbox-left">
               <img
+                srcset="./assets/Contact.webp"
                 src="./assets/Contact.jpg"
                 alt="A pregnant lady wearing green dress"
                 loading="lazy"
               />
             </div>
             <div class="contact-section-flexbox-right">
-              <form action="">
+              <form action="https://formspree.io/f/meqbrwev" method="post">
                 <p>Name <span>(erforderlich)</span></p>
                 <div class="name-field-set">
                   <div>
                     <label for="">Vorname </label>
-                    <input type="text" required />
+                    <input type="text" name="Vorname" required />
                   </div>
                   <div>
                     <label for=""> Nachname </label>
-                    <input type="text" required />
+                    <input type="text" name="Nachname" required />
                   </div>
                 </div>
 
@@ -277,17 +282,17 @@
                     >E-Mail
                     <span>(erforderlich)</span>
                   </label>
-                  <input type="email" required />
+                  <input type="email" name="E-Mail" required />
                 </div>
                 <div>
                   <label for="">Telefon</label>
-                  <input type="tel" />
+                  <input type="tel" name="Telefon" />
                 </div>
                 <div>
                   <div>
                     <label for="">Nachricht <span>(erforderlich)</span></label>
                     <textarea
-                      name=""
+                      name="Nachricht"
                       id=""
                       cols="30"
                       rows="4"
@@ -322,7 +327,7 @@
               <h3>In welchen Stadtteilen bin ich tätig?</h3>
               <span class="accordion-toggle">
                 <i class="fal fa-minus"></i>
-                <i class="fal fa-minus plus"></i>
+                <i class="fal fa-plus"></i>
               </span>
             </div>
             <div class="accordion-content">
@@ -363,7 +368,7 @@
               <h3>Welche Kosten entstehen?</h3>
               <span class="accordion-toggle">
                 <i class="fal fa-minus"></i>
-                <i class="fal fa-minus plus"></i>
+                <i class="fal fa-plus"></i>
               </span>
             </div>
             <div class="accordion-content">
@@ -403,40 +408,34 @@
         const title = accordion.querySelector(".accordion-title");
         const content = accordion.querySelector(".accordion-content");
         const toggle = title.querySelector(".accordion-toggle");
-        const plus = document.querySelectorAll(".plus");
+        const plus = title.querySelector(".fa-plus");
+        const minus = title.querySelector(".fa-minus");
 
-        title.addEventListener("click", (e) => {
-          // Close all other accordions
-          accordions.forEach((otherAccordion) => {
-            if (otherAccordion !== accordion) {
-              otherAccordion.querySelector(".accordion-content").style.display =
-                "none";
-              plus.forEach((item) => {
-                item.classList.remove("plus-appear");
-              });
-            }
-          });
-
+        // Add an event listener to the title
+        title.addEventListener("click", () => {
+          // Toggle the content display
           if (
             content.style.display === "none" ||
             content.style.display === ""
           ) {
             content.style.display = "block";
-
-            if (e.target.id === "accordian_1") {
-              plus[0].classList.add("plus-appear");
-            } else {
-              plus[1].classList.add("plus-appear");
-            }
+            plus.style.display = "none";
+            minus.style.display = "inline-block";
           } else {
             content.style.display = "none";
-            if (e.target.id === "accordian_1") {
-              plus[0].classList.remove("plus-appear");
-            } else {
-              plus[1].classList.remove("plus-appear");
-            }
+            plus.style.display = "inline-block";
+            minus.style.display = "none";
           }
         });
+
+        // Initially open the first accordion
+        if (accordion === accordions[0]) {
+          content.style.display = "block";
+          plus.style.display = "none";
+          minus.style.display = "inline-block";
+        } else {
+          minus.style.display = "none";
+        }
       });
 
       // Send Button Transition
