@@ -202,7 +202,13 @@
 
             <p>Teilnahmebedingungen <span>(erforderlich)</span></p>
             <div class="checkbox">
-              <input type="checkbox" name="checkbox" id="checkbox" />
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="checkbox"
+                required
+                oninvalid="this.setCustomValidity('Bitte kreuzen Sie dieses Feld an, wenn Sie fortfahren möchten.')"
+              />
               <label for="checkbox"
                 >Ich habe die Teilnahmebedingungen gelesen, zur Kenntnis
                 genommen und bin damit einverstanden.</label
